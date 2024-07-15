@@ -4,13 +4,13 @@ export const getContacts = async (req, res) => {
   try {
     const contacts = await fetchAllContacts();
     res.status(200).json({
-      status: 'success',
+      status: 200,
       message: 'Successfully found contacts!',
       data: contacts,
     });
   } catch (error) {
     res.status(500).json({
-      status: 'error',
+      status: 500,
       message: 'Failed to fetch contacts',
       error: error.message,
     });
@@ -23,13 +23,13 @@ export const getContactById = async (req, res) => {
     const contact = await fetchContactById(contactId);
     if (contact) {
       res.status(200).json({
-        status: 'success',
+        status: 200,
         message: 'Successfully found contact!',
         data: contact,
       });
     } else {
       res.status(404).json({
-        status: 'error',
+        status: 404,
         message: 'Contact not found',
         data: null,
       });
