@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-
 const contactsSchema = new mongoose.Schema(
     {
     name: {
@@ -27,7 +26,9 @@ const contactsSchema = new mongoose.Schema(
     },
     {
         timestamps: true,
+        versionKey: false,
     },
+
 );
 
 const Contact = mongoose.model("Contact", contactsSchema);
