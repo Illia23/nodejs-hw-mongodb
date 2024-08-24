@@ -1,4 +1,5 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
+
 dotenv.config();
 
 export function env(name, defaultValue) {
@@ -10,3 +11,5 @@ export function env(name, defaultValue) {
 
   throw new Error(`Missing: process.env['${name}'].`);
 }
+
+
